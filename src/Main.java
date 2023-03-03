@@ -41,9 +41,10 @@ findMinMax(listNumber.stream(), Integer::compareTo, (x, a) ->
     }
 
     public static void countNumber (List <Integer> countNumbers) {
-        countNumbers
+        long count = countNumbers
                 .stream()
-                .filter( x-> x % 2 == 0)
-                .forEach(System.out::println);
+                .filter( x-> x % 2 == 0).peek(System.out::println).count();
+        System.out.println("Количество четных числел = " + count);
+
     }
 }
